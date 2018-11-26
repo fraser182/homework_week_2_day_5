@@ -8,8 +8,9 @@ require_relative("../song.rb")
 class SongTest < MiniTest::Test
 
   def setup()
-    @song_1 = Song.new("Queen", "Bohemian Rhapsody")
-    @song_2 = Song.new("Goo Goo Dolls", "Iris")
+    @song_1 = Song.new("Queen", "Under Pressure", 1982)
+    @song_2 = Song.new("Goo Goo Dolls", "Iris", 1998)
+
   end
 
 
@@ -23,5 +24,8 @@ class SongTest < MiniTest::Test
     assert_equal("Iris", @song_2.title)
   end
 
+  def test_get_song_release_date()
+    assert_equal(1998, @song_2.release_date)
+  end
 
 end

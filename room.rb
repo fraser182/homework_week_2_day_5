@@ -45,6 +45,10 @@ class Room
      end
    end
 
+# def songs_from_the_80s(@playlist_1)
+#
+# end
+
 
 
 end

@@ -1,8 +1,8 @@
 class Guest
 
-attr_reader :name
+  attr_reader :name
 
-attr_accessor :money,:favourite_song
+  attr_accessor :money,:favourite_song
 
   def initialize (name, money, favourite_song)
     @name = name
@@ -12,16 +12,15 @@ attr_accessor :money,:favourite_song
 
 
   def can_afford_entry(room)
-     money >= room.entry_price
-   end
+    money >= room.entry_price
+  end
 
 
-
-     def favourite_song_plays(song)
-       if @favourite_song == song
-         return "Yes, what a tune!"
-       end
-     end
+  def favourite_song_plays(song)
+    if @favourite_song == song
+      return "Yes, what a tune!"
+    end
+  end
 
 
 end

@@ -14,12 +14,14 @@ class RoomTest < MiniTest::Test
 
     @guestlist = [@guest_1, @guest_2]
 
-    @song_1 = Song.new("Queen", "Under Pressure")
-    @song_2 = Song.new("Goo Goo Dolls", "Iris")
-    @song_3 = Song.new("Bee Gees", "Stayin' Alive")
+    @song_1 = Song.new("Queen", "Under Pressure", 1982)
+    @song_2 = Song.new("Goo Goo Dolls", "Iris", 1998)
+    @song_3 = Song.new("Bee Gees", "Stayin' Alive", 1977)
+    @song_4 = Song.new("AC/DC", "Thunderstruck", 1990)
+    @song_5 = Song.new("Journey", "Don't Stop Believin'", 1982)
 
     @playlist_1 = [@song_1, @song_2, @song_3]
-
+    @playlist_2 = [@song_3, @song_4, @song_5]
 
 
     @room = Room.new("Blue Room",5, @playlist_1)
@@ -54,7 +56,7 @@ class RoomTest < MiniTest::Test
   end
 
   def test_add_song_to_room()
-    song = Song.new("Iron Maiden", "Wickerman")
+    song = Song.new("Iron Maiden", "Wickerman", 2000)
     @room.add_song_to_playlist(song)
     assert_equal(@playlist_1, @room.playlist)
   end
@@ -77,6 +79,10 @@ class RoomTest < MiniTest::Test
     assert_equal("The room is full.", room.check_in_guest(@guest_3))
   end
 
+  # def test_find_songs_from_the_80s_from_playlist_1
+  #   songs = @room.songs_from_the_80s(@playlist_1)
+  #   assert_equal()
+  # end
 
 
 end

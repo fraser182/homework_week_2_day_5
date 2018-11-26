@@ -8,10 +8,13 @@ class GuestTest < MiniTest::Test
 
   def setup()
 
-    @guest = Guest.new("Belle", 40, "We Will Rock You")
+    @guest = Guest.new("Belle", 40, "Iris")
 
-    @song_1 = Song.new("Queen", "Bohemian Rhapsody")
-    @song_2 = Song.new("Queen", "We Will Rock You")
+    @song_1 = Song.new("Queen", "Under Pressure", 1982)
+    @song_2 = Song.new("Goo Goo Dolls", "Iris", 1998)
+    @song_3 = Song.new("Bee Gees", "Stayin' Alive", 1977)
+
+    @playlist_1 = [@song_1, @song_2, @song_3]
 
     @room = Room.new("Purple Room",5, [@song_1, @song_2])
 
@@ -35,6 +38,10 @@ class GuestTest < MiniTest::Test
   def test_cannot_afford_entry
     guest = Guest.new("Jacob", 3, "One")
     assert_equal(false, guest.can_afford_entry(@room))
+  end
+
+  def test_favourite_song_available
+    assert_equal("Iris", @guest.favourite_song)
   end
 
   def test_favourite_song_plays
