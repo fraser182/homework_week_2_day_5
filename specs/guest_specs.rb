@@ -37,14 +37,11 @@ class GuestTest < MiniTest::Test
     assert_equal(false, guest.can_afford_entry(@room))
   end
 
-  def test_favourite_song
+  def test_favourite_song_plays
     fav_song = @guest.favourite_song_plays(@song_2.title)
     assert_equal("Yes, what a tune!",fav_song)
   end
 
-  def test_not_favourite_song
-    not_fav_song = @guest.favourite_song_plays(@song_1.title)
-    assert_equal(nil, not_fav_song)
-  end
+
 
 end

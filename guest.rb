@@ -20,8 +20,6 @@ attr_accessor :money,:favourite_song
      def favourite_song_plays(song)
        if @favourite_song == song
          return "Yes, what a tune!"
-       else
-         return nil
        end
      end
 
