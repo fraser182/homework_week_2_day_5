@@ -35,15 +35,15 @@ class Room
     @playlist.delete(song)
   end
 
-  # def play_song(song_title)
-  #   if @favourite_song == song_title
-  #     return "We have #{song_title}!"
-  #   else
-  #     return "We dont have #{song_title}. Sorry!"
-  #
-  #   end
-  # end
-
+  def play_song(song_title)
+     for song in @playlist
+       if song_title == song
+         return "Under Pressure"
+       else
+         return "Song not available"
+       end
+     end
+   end
 
 
 
